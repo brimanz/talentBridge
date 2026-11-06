@@ -70,14 +70,8 @@ Landing page profesional para una consultora de posicionamiento profesional orie
 | **Google Fonts (Inter)** | Tipografía | `font-display: swap` para performance |
 | **SVG inline** | Iconografía | 0 requests HTTP, escalable |
 
-### Hosting recomendado
-- **Netlify** / **Vercel** / **GitHub Pages** — Deploy estático, CDN global, SSL gratuito.
-
 ### Integraciones
 - **WhatsApp API** (`wa.me`) — Enlaces directos sin SDK.
 - **Schema.org JSON-LD** — Rich snippets en Google.
 - **mailto: / tel:** — Protocolos nativos.
 
----
-
-## 📁 Estructura del proyecto
