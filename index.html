@@ -1,0 +1,922 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TalentBridge | Posicionamiento Profesional para Talento Latino</title>
+<meta name="description" content="Transformamos tu experiencia profesional en una candidatura estratégica. CV, Cover Letter y LinkedIn optimizados con IA y metodología ATS para mercados internacionales.">
+<meta property="og:title" content="TalentBridge | Tu puente hacia oportunidades internacionales">
+<meta property="og:description" content="Optimización profesional con IA y ATS para talento latino. CV, Cover Letter y LinkedIn.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "TalentBridge",
+  "description": "Consultoría de posicionamiento profesional para talento latino con IA y ATS",
+  "telephone": "+584220451602",
+  "priceRange": "$10 - $15"
+}
+</script>
+<style>
+  :root{
+    --primary:#0A2540;
+    --primary-light:#1a3a5c;
+    --accent:#D4AF37;
+    --accent-dark:#b8941f;
+    --bg:#F8FAFC;
+    --white:#FFFFFF;
+    --text:#1a202c;
+    --text-light:#4a5568;
+    --whatsapp:#25D366;
+    --shadow:0 10px 30px rgba(10,37,64,.08);
+    --shadow-hover:0 20px 50px rgba(10,37,64,.15);
+    --radius:14px;
+    --transition:all .3s cubic-bezier(.4,0,.2,1);
+    --header-height:72px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Inter',system-ui,-apple-system,sans-serif;
+    color:var(--text);
+    background:var(--bg);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  body.menu-open{overflow:hidden}
+  .container{max-width:1200px;margin:0 auto;padding:0 24px}
+
+  /* HEADER */
+  header{
+    position:fixed;top:0;left:0;right:0;z-index:100;
+    background:rgba(255,255,255,.95);
+    backdrop-filter:blur(10px);
+    -webkit-backdrop-filter:blur(10px);
+    border-bottom:1px solid rgba(10,37,64,.08);
+    transition:var(--transition);
+    height:var(--header-height);
+  }
+  nav{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:0 24px;max-width:1200px;margin:0 auto;height:100%;
+  }
+  .logo{
+    display:flex;align-items:center;gap:10px;
+    font-weight:800;font-size:1.35rem;color:var(--primary);
+    text-decoration:none;z-index:101;
+  }
+  .logo-icon{
+    width:38px;height:38px;border-radius:10px;
+    background:linear-gradient(135deg,var(--primary),var(--primary-light));
+    display:flex;align-items:center;justify-content:center;color:var(--accent);
+  }
+  .nav-links{display:flex;gap:32px;list-style:none;align-items:center}
+  .nav-links a{
+    color:var(--text);text-decoration:none;font-weight:500;
+    font-size:.95rem;transition:var(--transition);position:relative;
+  }
+  .nav-links a:hover{color:var(--accent)}
+  .nav-links a::after{
+    content:'';position:absolute;bottom:-6px;left:0;
+    width:0;height:2px;background:var(--accent);transition:var(--transition);
+  }
+  .nav-links a:hover::after{width:100%}
+
+  /* MENU TOGGLE */
+  .menu-toggle{
+    display:none;background:none;border:none;cursor:pointer;
+    color:var(--primary);width:44px;height:44px;
+    position:relative;z-index:101;
+    align-items:center;justify-content:center;
+    border-radius:8px;transition:var(--transition);
+  }
+  .menu-toggle:hover{background:rgba(10,37,64,.05)}
+  .menu-toggle span{
+    display:block;width:24px;height:2px;
+    background:currentColor;border-radius:2px;
+    transition:transform .3s ease, opacity .2s ease, top .3s ease;
+    position:absolute;left:10px;
+  }
+  .menu-toggle span:nth-child(1){top:14px}
+  .menu-toggle span:nth-child(2){top:21px}
+  .menu-toggle span:nth-child(3){top:28px}
+  .menu-toggle.active span:nth-child(1){top:21px;transform:rotate(45deg)}
+  .menu-toggle.active span:nth-child(2){opacity:0}
+  .menu-toggle.active span:nth-child(3){top:21px;transform:rotate(-45deg)}
+
+  /* OVERLAY */
+  .nav-overlay{
+    position:fixed;inset:0;background:rgba(10,37,64,.5);
+    backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);
+    opacity:0;visibility:hidden;transition:var(--transition);
+    z-index:99;
+  }
+  .nav-overlay.active{opacity:1;visibility:visible}
+
+  /* HERO */
+  .hero{
+    min-height:100vh;
+    background:
+      radial-gradient(circle at 20% 30%,rgba(212,175,55,.15) 0%,transparent 50%),
+      radial-gradient(circle at 80% 70%,rgba(26,58,92,.3) 0%,transparent 50%),
+      linear-gradient(135deg,var(--primary) 0%,var(--primary-light) 100%);
+    color:white;display:flex;align-items:center;
+    position:relative;overflow:hidden;
+    padding:calc(var(--header-height) + 40px) 0 60px;
+  }
+  .hero::before{
+    content:'';position:absolute;inset:0;
+    background-image:
+      linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),
+      linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);
+    background-size:50px 50px;
+  }
+  .hero-content{position:relative;z-index:2;max-width:800px}
+  .hero-badge{
+    display:inline-flex;align-items:center;gap:8px;
+    background:rgba(212,175,55,.15);
+    border:1px solid rgba(212,175,55,.3);
+    color:var(--accent);padding:8px 18px;border-radius:50px;
+    font-size:.85rem;font-weight:600;margin-bottom:24px;
+    animation:fadeUp .8s ease;
+  }
+  .hero h1{
+    font-size:clamp(2.2rem,6vw,4.5rem);
+    font-weight:800;line-height:1.1;margin-bottom:24px;
+    animation:fadeUp .8s ease .1s backwards;
+  }
+  .hero h1 .highlight{
+    background:linear-gradient(135deg,var(--accent),#f4d06f);
+    -webkit-background-clip:text;background-clip:text;
+    -webkit-text-fill-color:transparent;
+  }
+  .hero p{
+    font-size:clamp(1rem,2vw,1.3rem);
+    color:rgba(255,255,255,.9);margin-bottom:40px;max-width:620px;
+    animation:fadeUp .8s ease .2s backwards;
+  }
+  .hero-ctas{display:flex;gap:16px;flex-wrap:wrap;animation:fadeUp .8s ease .3s backwards}
+  .btn{
+    display:inline-flex;align-items:center;gap:10px;
+    padding:16px 32px;border-radius:10px;
+    font-weight:600;font-size:1rem;
+    text-decoration:none;cursor:pointer;border:none;
+    transition:var(--transition);min-height:52px;
+  }
+  .btn-primary{background:var(--accent);color:var(--primary)}
+  .btn-primary:hover{background:#f4d06f;transform:translateY(-3px);box-shadow:0 15px 30px rgba(212,175,55,.3)}
+  .btn-secondary{background:rgba(255,255,255,.1);color:white;border:1px solid rgba(255,255,255,.25)}
+  .btn-secondary:hover{background:rgba(255,255,255,.18);transform:translateY(-3px)}
+  .hero-stats{
+    display:flex;gap:48px;margin-top:64px;flex-wrap:wrap;
+    animation:fadeUp .8s ease .4s backwards;
+  }
+  .stat-num{font-size:2.2rem;font-weight:800;color:var(--accent)}
+  .stat-label{font-size:.9rem;color:rgba(255,255,255,.75)}
+  @keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+
+  /* SECTIONS */
+  section{padding:100px 0}
+  .section-header{text-align:center;max-width:700px;margin:0 auto 64px}
+  .section-tag{
+    display:inline-block;color:var(--accent-dark);
+    font-weight:600;font-size:.9rem;
+    text-transform:uppercase;letter-spacing:2px;
+    margin-bottom:12px;
+  }
+  .section-title{
+    font-size:clamp(1.8rem,4vw,2.8rem);
+    font-weight:800;color:var(--primary);
+    margin-bottom:16px;line-height:1.2;
+  }
+  .section-subtitle{color:var(--text-light);font-size:1.05rem}
+
+  /* SERVICIOS */
+  .services{background:var(--white)}
+  .services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:28px}
+  .service-card{
+    background:var(--white);
+    border:1px solid rgba(10,37,64,.08);
+    border-radius:var(--radius);padding:36px 28px;
+    transition:var(--transition);position:relative;overflow:hidden;
+  }
+  .service-card::before{
+    content:'';position:absolute;top:0;left:0;right:0;height:3px;
+    background:linear-gradient(90deg,var(--accent),var(--primary));
+    transform:scaleX(0);transform-origin:left;transition:var(--transition);
+  }
+  .service-card:hover{transform:translateY(-8px);box-shadow:var(--shadow-hover);border-color:transparent}
+  .service-card:hover::before{transform:scaleX(1)}
+  .service-icon{
+    width:56px;height:56px;border-radius:12px;
+    background:linear-gradient(135deg,rgba(10,37,64,.08),rgba(212,175,55,.1));
+    display:flex;align-items:center;justify-content:center;
+    color:var(--primary);margin-bottom:20px;
+  }
+  .service-card h3{font-size:1.25rem;font-weight:700;color:var(--primary);margin-bottom:12px}
+  .service-card p{color:var(--text-light);font-size:.95rem}
+
+  /* NUEVA SECCIÓN: TECNOLOGÍA IA + ATS */
+  .technology{
+    background:linear-gradient(135deg,#0A2540 0%,#1a3a5c 100%);
+    color:white;
+    position:relative;
+    overflow:hidden;
+  }
+  .technology::before{
+    content:'';position:absolute;inset:0;
+    background:
+      radial-gradient(circle at 15% 50%,rgba(212,175,55,.15) 0%,transparent 40%),
+      radial-gradient(circle at 85% 50%,rgba(212,175,55,.1) 0%,transparent 40%);
+  }
+  .technology .container{position:relative;z-index:2}
+  .technology .section-tag{color:var(--accent)}
+  .technology .section-title{color:white}
+  .technology .section-subtitle{color:rgba(255,255,255,.85)}
+
+  .tech-hero{
+    display:flex;align-items:center;gap:48px;
+    margin-bottom:56px;flex-wrap:wrap;
+  }
+  .tech-visual{
+    flex-shrink:0;
+    width:140px;height:140px;
+    border-radius:28px;
+    background:linear-gradient(135deg,rgba(212,175,55,.2),rgba(212,175,55,.05));
+    border:1px solid rgba(212,175,55,.3);
+    display:flex;align-items:center;justify-content:center;
+    color:var(--accent);
+    position:relative;
+    animation:float 4s ease-in-out infinite;
+  }
+  .tech-visual::after{
+    content:'';position:absolute;inset:-8px;
+    border-radius:32px;
+    border:1px dashed rgba(212,175,55,.3);
+    animation:spin 20s linear infinite;
+  }
+  @keyframes float{
+    0%,100%{transform:translateY(0)}
+    50%{transform:translateY(-10px)}
+  }
+  @keyframes spin{
+    from{transform:rotate(0deg)}
+    to{transform:rotate(360deg)}
+  }
+  .tech-text{flex:1;min-width:280px}
+  .tech-text h2{
+    font-size:clamp(1.8rem,3.5vw,2.4rem);
+    font-weight:800;line-height:1.2;margin-bottom:16px;
+  }
+  .tech-text h2 .highlight{
+    background:linear-gradient(135deg,var(--accent),#f4d06f);
+    -webkit-background-clip:text;background-clip:text;
+    -webkit-text-fill-color:transparent;
+  }
+  .tech-text p{
+    font-size:1.05rem;color:rgba(255,255,255,.85);
+    max-width:620px;line-height:1.7;
+  }
+
+  .tech-features{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+    gap:24px;
+  }
+  .tech-feature{
+    background:rgba(255,255,255,.05);
+    backdrop-filter:blur(10px);
+    -webkit-backdrop-filter:blur(10px);
+    border:1px solid rgba(255,255,255,.1);
+    border-radius:var(--radius);
+    padding:28px 24px;
+    transition:var(--transition);
+  }
+  .tech-feature:hover{
+    background:rgba(255,255,255,.08);
+    border-color:rgba(212,175,55,.3);
+    transform:translateY(-5px);
+  }
+  .tech-feature-icon{
+    width:48px;height:48px;border-radius:12px;
+    background:linear-gradient(135deg,var(--accent),#f4d06f);
+    display:flex;align-items:center;justify-content:center;
+    color:var(--primary);margin-bottom:18px;
+  }
+  .tech-feature h3{
+    font-size:1.1rem;font-weight:700;
+    color:white;margin-bottom:10px;
+  }
+  .tech-feature p{
+    color:rgba(255,255,255,.75);
+    font-size:.92rem;line-height:1.6;
+  }
+
+  /* PLANES */
+  .plans{background:linear-gradient(180deg,var(--bg) 0%,var(--white) 100%)}
+  .plans-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:32px;max-width:900px;margin:0 auto}
+  .plan-card{
+    background:var(--white);border-radius:20px;
+    padding:44px 36px;box-shadow:var(--shadow);
+    position:relative;transition:var(--transition);
+    border:2px solid transparent;
+  }
+  .plan-card:hover{transform:translateY(-8px);box-shadow:var(--shadow-hover)}
+  .plan-card.featured{
+    background:linear-gradient(135deg,var(--primary) 0%,var(--primary-light) 100%);
+    color:white;transform:scale(1.03);
+  }
+  .plan-card.featured:hover{transform:scale(1.03) translateY(-8px)}
+  .plan-badge{
+    position:absolute;top:-14px;right:28px;
+    background:var(--accent);color:var(--primary);
+    padding:6px 16px;border-radius:50px;
+    font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;
+  }
+  .plan-name{font-size:1.1rem;font-weight:600;color:var(--accent-dark);margin-bottom:8px;text-transform:uppercase;letter-spacing:1px}
+  .plan-card.featured .plan-name{color:var(--accent)}
+  .plan-price{display:flex;align-items:baseline;gap:6px;margin-bottom:8px}
+  .plan-price .currency{font-size:1.5rem;font-weight:700;color:var(--primary)}
+  .plan-price .amount{font-size:3.5rem;font-weight:800;color:var(--primary);line-height:1}
+  .plan-card.featured .plan-price .currency,.plan-card.featured .plan-price .amount{color:white}
+  .plan-desc{color:var(--text-light);margin-bottom:28px;font-size:.95rem}
+  .plan-card.featured .plan-desc{color:rgba(255,255,255,.8)}
+  .plan-features{list-style:none;margin-bottom:32px}
+  .plan-features li{display:flex;align-items:flex-start;gap:12px;padding:10px 0;font-size:.95rem}
+  .plan-features li svg{flex-shrink:0;color:var(--accent);margin-top:2px}
+  .plan-card.featured .plan-features li{color:rgba(255,255,255,.95)}
+  .plan-btn{
+    display:flex;align-items:center;justify-content:center;
+    text-align:center;padding:14px;
+    border-radius:10px;font-weight:600;text-decoration:none;
+    transition:var(--transition);min-height:48px;
+  }
+  .plan-btn.outline{background:transparent;color:var(--primary);border:2px solid var(--primary)}
+  .plan-btn.outline:hover{background:var(--primary);color:white}
+  .plan-btn.filled{background:var(--accent);color:var(--primary)}
+  .plan-btn.filled:hover{background:#f4d06f;transform:translateY(-2px)}
+
+  /* TESTIMONIOS */
+  .testimonials{background:var(--white)}
+  .testimonials-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:28px}
+  .testimonial-card{
+    background:var(--bg);border-radius:var(--radius);
+    padding:32px;position:relative;transition:var(--transition);
+    border:1px solid rgba(10,37,64,.05);
+  }
+  .testimonial-card:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
+  .quote-icon{position:absolute;top:20px;right:24px;color:var(--accent);opacity:.25}
+  .stars{display:flex;gap:3px;margin-bottom:16px}
+  .star{color:var(--accent);width:20px;height:20px}
+  .testimonial-text{color:var(--text);font-size:1rem;line-height:1.7;margin-bottom:24px;font-style:italic}
+  .testimonial-author{display:flex;align-items:center;gap:14px}
+  .author-avatar{
+    width:48px;height:48px;border-radius:50%;
+    background:linear-gradient(135deg,var(--primary),var(--accent));
+    display:flex;align-items:center;justify-content:center;
+    color:white;font-weight:700;font-size:1.1rem;flex-shrink:0;
+  }
+  .author-info h4{font-size:1rem;font-weight:700;color:var(--primary);margin-bottom:2px}
+  .author-info span{font-size:.85rem;color:var(--text-light)}
+
+  /* CONTACTO */
+  .contact{
+    background:linear-gradient(135deg,var(--primary) 0%,var(--primary-light) 100%);
+    color:white;
+  }
+  .contact .section-title{color:white}
+  .contact .section-subtitle{color:rgba(255,255,255,.85)}
+  .contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px;max-width:1000px;margin:0 auto}
+  .contact-card{
+    background:rgba(255,255,255,.08);
+    backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+    border:1px solid rgba(255,255,255,.15);
+    border-radius:var(--radius);padding:32px 24px;
+    text-align:center;transition:var(--transition);
+    text-decoration:none;color:white;display:block;
+  }
+  .contact-card:hover{background:rgba(255,255,255,.15);transform:translateY(-5px)}
+  .contact-icon{
+    width:64px;height:64px;border-radius:16px;
+    background:var(--accent);
+    display:flex;align-items:center;justify-content:center;
+    color:var(--primary);margin:0 auto 20px;
+  }
+  .contact-card h3{font-size:1.1rem;margin-bottom:8px;font-weight:700}
+  .contact-card p{color:rgba(255,255,255,.85);font-size:.95rem;word-break:break-word}
+
+  /* FOOTER */
+  footer{background:#061a2e;color:rgba(255,255,255,.7);padding:40px 0;text-align:center}
+  footer p{font-size:.9rem}
+  footer a{color:var(--accent);text-decoration:none}
+
+  /* WHATSAPP FLOAT */
+  .whatsapp-float{
+    position:fixed;bottom:28px;right:28px;z-index:98;
+    width:62px;height:62px;border-radius:50%;
+    background:var(--whatsapp);
+    display:flex;align-items:center;justify-content:center;
+    color:white;text-decoration:none;
+    box-shadow:0 8px 24px rgba(37,211,102,.4);
+    transition:var(--transition);
+    animation:pulse 2s infinite;
+  }
+  .whatsapp-float:hover{transform:scale(1.1);box-shadow:0 12px 32px rgba(37,211,102,.6)}
+  @keyframes pulse{
+    0%,100%{box-shadow:0 8px 24px rgba(37,211,102,.4)}
+    50%{box-shadow:0 8px 24px rgba(37,211,102,.4),0 0 0 12px rgba(37,211,102,.15)}
+  }
+
+  /* RESPONSIVE - TABLET */
+  @media(max-width:968px){
+    .hero-stats{gap:32px}
+    .stat-num{font-size:1.8rem}
+    section{padding:80px 0}
+    .tech-hero{gap:32px}
+    .tech-visual{width:110px;height:110px}
+  }
+
+  /* RESPONSIVE - MOBILE */
+  @media(max-width:768px){
+    :root{--header-height:64px}
+
+    .menu-toggle{display:flex}
+
+    .nav-links{
+      position:fixed;top:0;right:0;
+      width:min(320px,85vw);height:100vh;
+      background:var(--white);
+      flex-direction:column;
+      justify-content:flex-start;
+      align-items:stretch;
+      gap:0;padding:calc(var(--header-height) + 20px) 24px 24px;
+      box-shadow:-10px 0 40px rgba(10,37,64,.15);
+      transform:translateX(100%);
+      transition:transform .35s cubic-bezier(.4,0,.2,1);
+      z-index:100;
+      overflow-y:auto;
+    }
+    .nav-links.active{transform:translateX(0)}
+    .nav-links li{border-bottom:1px solid rgba(10,37,64,.08);width:100%}
+    .nav-links li:last-child{border-bottom:none}
+    .nav-links a{
+      display:block;padding:18px 8px;
+      font-size:1.05rem;font-weight:600;width:100%;
+    }
+    .nav-links a::after{display:none}
+
+    .hero{padding:calc(var(--header-height) + 20px) 0 40px;min-height:auto}
+    .hero-badge{font-size:.78rem;padding:6px 14px}
+    .hero h1{margin-bottom:18px}
+    .hero p{margin-bottom:28px;font-size:1rem}
+    .hero-ctas{flex-direction:column;width:100%}
+    .hero-ctas .btn{width:100%;justify-content:center;padding:14px 24px}
+    .hero-stats{margin-top:40px;gap:24px;justify-content:space-between;width:100%}
+    .stat{flex:1;min-width:0}
+    .stat-num{font-size:1.6rem}
+    .stat-label{font-size:.8rem}
+
+    section{padding:64px 0}
+    .section-header{margin-bottom:40px}
+    .section-subtitle{font-size:.98rem}
+
+    /* Tecnología mobile */
+    .tech-hero{flex-direction:column;text-align:center;gap:24px;margin-bottom:40px}
+    .tech-visual{width:100px;height:100px;border-radius:22px}
+    .tech-visual svg{width:52px;height:52px}
+    .tech-text h2{font-size:1.6rem}
+    .tech-text p{font-size:.98rem}
+    .tech-features{grid-template-columns:1fr;gap:16px}
+    .tech-feature{padding:24px 20px}
+
+    .services-grid{grid-template-columns:1fr;gap:20px}
+    .service-card{padding:28px 24px}
+
+    .plans-grid{grid-template-columns:1fr;gap:24px}
+    .plan-card{padding:36px 28px}
+    .plan-card.featured{transform:none}
+    .plan-card.featured:hover{transform:translateY(-8px)}
+    .plan-price .amount{font-size:3rem}
+
+    .testimonials-grid{grid-template-columns:1fr;gap:20px}
+    .testimonial-card{padding:28px 24px}
+
+    .contact-grid{grid-template-columns:1fr;gap:16px}
+    .contact-card{padding:24px 20px}
+    .contact-icon{width:56px;height:56px}
+
+    .whatsapp-float{width:56px;height:56px;bottom:20px;right:20px}
+    .whatsapp-float svg{width:28px;height:28px}
+
+    footer{padding:32px 0}
+    footer p{font-size:.85rem}
+  }
+
+  @media(max-width:380px){
+    .hero h1{font-size:2rem}
+    .hero-stats{flex-direction:column;gap:16px;align-items:flex-start}
+    .plan-card{padding:32px 22px}
+  }
+
+  @media(prefers-reduced-motion:reduce){
+    *,*::before,*::after{
+      animation-duration:.01ms !important;
+      transition-duration:.01ms !important;
+    }
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <nav>
+    <a href="#home" class="logo" aria-label="TalentBridge inicio">
+      <span class="logo-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+      </span>
+      TalentBridge
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#servicios">Servicios</a></li>
+      <li><a href="#planes">Planes</a></li>
+      <li><a href="#testimonios">Testimonios</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="navLinks">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </nav>
+  <div class="nav-overlay" id="navOverlay"></div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="container">
+    <div class="hero-content">
+      <span class="hero-badge">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 16.8l-6.2 4.5 2.4-7.4L2 9.4h7.6z"/></svg>
+        Consultoría de Posicionamiento Profesional
+      </span>
+      <h1>TalentBridge<br><span class="highlight">Un puente entre el talento</span><br>y las oportunidades internacionales</h1>
+      <p>Transformamos tu experiencia profesional en una candidatura estratégica, clara y adaptada al mercado laboral al que deseas acceder.</p>
+      <div class="hero-ctas">
+        <a href="#planes" class="btn btn-primary">
+          Ver planes
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+        <a href="#servicios" class="btn btn-secondary">Conocer servicios</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat">
+          <div class="stat-num">+500</div>
+          <div class="stat-label">Perfiles optimizados</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">15+</div>
+          <div class="stat-label">Países atendidos</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">98%</div>
+          <div class="stat-label">Satisfacción</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICIOS -->
+<section class="services" id="servicios">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">Nuestros Servicios</span>
+      <h2 class="section-title">Cuatro pilares para destacar tu perfil</h2>
+      <p class="section-subtitle">Combinamos precisión técnica y asesoría humana personalizada para potenciar tu candidatura.</p>
+    </div>
+    <div class="services-grid">
+      <article class="service-card">
+        <div class="service-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        </div>
+        <h3>Adaptación Estratégica</h3>
+        <p>Adecuamos tu CV y Cover Letter al país, idioma, sector y tipo de posición al que aspiras.</p>
+      </article>
+      <article class="service-card">
+        <div class="service-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+        </div>
+        <h3>Optimización Técnica</h3>
+        <p>Estructura, palabras clave y formato compatible con sistemas ATS para mayor legibilidad.</p>
+      </article>
+      <article class="service-card">
+        <div class="service-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        </div>
+        <h3>Narrativa Profesional</h3>
+        <p>Convertimos responsabilidades en competencias, logros y resultados medibles y atractivos.</p>
+      </article>
+      <article class="service-card">
+        <div class="service-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <h3>Acompañamiento Humano</h3>
+        <p>Sesión virtual individual para comprender tu trayectoria, objetivos y fortalezas únicas.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- NUEVA SECCIÓN: TECNOLOGÍA IA + ATS -->
+<section class="technology" id="tecnologia">
+  <div class="container">
+    <div class="tech-hero">
+      <div class="tech-visual" aria-hidden="true">
+        <svg width="68" height="68" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2" y="4" width="20" height="16" rx="2"/>
+          <path d="M7 8h.01M12 8h.01M17 8h.01"/>
+          <path d="M7 12h10"/>
+          <path d="M7 16h6"/>
+          <circle cx="19" cy="5" r="2" fill="currentColor" stroke="none"/>
+        </svg>
+      </div>
+      <div class="tech-text">
+        <span class="section-tag">Tecnología al servicio de tu candidatura</span>
+        <h2>Optimizamos tu CV con <span class="highlight">Inteligencia Artificial</span> y metodología ATS</h2>
+        <p>Aplicamos herramientas de IA avanzadas que analizan, estructuran y optimizan tu currículum bajo los estándares de los sistemas ATS (Applicant Tracking System) que utilizan las empresas internacionales. Así garantizamos que tu perfil sea leído, comprendido y valorado por los reclutadores.</p>
+      </div>
+    </div>
+
+    <div class="tech-features">
+      <div class="tech-feature">
+        <div class="tech-feature-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2a4 4 0 0 1 4 4v2a4 4 0 0 1-8 0V6a4 4 0 0 1 4-4z"/>
+            <path d="M6 10v2a6 6 0 0 0 12 0v-2"/>
+            <line x1="12" y1="18" x2="12" y2="22"/>
+            <line x1="8" y1="22" x2="16" y2="22"/>
+          </svg>
+        </div>
+        <h3>Análisis con IA</h3>
+        <p>Nuestra IA evalúa la estructura, redacción y contenido de tu CV para identificar áreas de mejora y oportunidades de impacto.</p>
+      </div>
+      <div class="tech-feature">
+        <div class="tech-feature-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M9 11l3 3L22 4"/>
+            <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
+          </svg>
+        </div>
+        <h3>Filtro ATS superado</h3>
+        <p>Formato, jerarquía y palabras clave alineadas a los sistemas que filtran candidaturas automáticamente en procesos internacionales.</p>
+      </div>
+      <div class="tech-feature">
+        <div class="tech-feature-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+            <path d="M2 17l10 5 10-5"/>
+            <path d="M2 12l10 5 10-5"/>
+          </svg>
+        </div>
+        <h3>Palabras clave estratégicas</h3>
+        <p>Incorporamos términos clave del sector y mercado objetivo para aumentar tu visibilidad ante reclutadores y algoritmos.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PLANES -->
+<section class="plans" id="planes">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">Planes</span>
+      <h2 class="section-title">Elige el plan ideal para ti</h2>
+      <p class="section-subtitle">Precios de lanzamiento sujetos a validación. Invierte en tu futuro profesional.</p>
+    </div>
+    <div class="plans-grid">
+      <div class="plan-card">
+        <div class="plan-name">Plan Básico</div>
+        <div class="plan-price">
+          <span class="currency">USD</span>
+          <span class="amount">10</span>
+        </div>
+        <p class="plan-desc">Optimización documental y asesoría profesional.</p>
+        <ul class="plan-features">
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Sesión virtual individual</li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Diagnóstico y revisión del perfil</li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>CV adaptado al mercado objetivo</li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Optimización ATS con IA</li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Cover Letter personalizada</li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Orientación de mejora</li>
+        </ul>
+        <a href="https://wa.me/584220451602?text=Hola%2C%20me%20interesa%20el%20Plan%20B%C3%A1sico%20de%20TalentBridge" class="plan-btn outline" target="_blank" rel="noopener">Contratar Básico</a>
+      </div>
+
+      <div class="plan-card featured">
+        <span class="plan-badge">Más popular</span>
+        <div class="plan-name">Plan Pro</div>
+        <div class="plan-price">
+          <span class="currency">USD</span>
+          <span class="amount">15</span>
+        </div>
+        <p class="plan-desc">Optimización integral de tu perfil profesional.</p>
+        <ul class="plan-features">
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Todo lo del Plan Básico</li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Optimización del titular de LinkedIn</li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Redacción de la sección "Acerca de"</li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Mejora de experiencias laborales</li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Palabras clave estratégicas</li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Posicionamiento ante reclutadores</li>
+        </ul>
+        <a href="https://wa.me/584220451602?text=Hola%2C%20me%20interesa%20el%20Plan%20Pro%20de%20TalentBridge" class="plan-btn filled" target="_blank" rel="noopener">Contratar Pro</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIOS -->
+<section class="testimonials" id="testimonios">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">Testimonios</span>
+      <h2 class="section-title">Lo que dicen nuestros clientes</h2>
+      <p class="section-subtitle">Historias reales de profesionales que dieron el salto internacional.</p>
+    </div>
+    <div class="testimonials-grid">
+      <article class="testimonial-card">
+        <svg class="quote-icon" width="48" height="48" viewBox="0 0 24 24" fill="currentColor"><path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/></svg>
+        <div class="stars" aria-label="5 estrellas">
+          <svg class="star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 16.8l-6.2 4.5 2.4-7.4L2 9.4h7.6z"/></svg>
+          <svg class="star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 16.8l-6.2 4.5 2.4-7.4L2 9.4h7.6z"/></svg>
+          <svg class="star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 16.8l-6.2 4.5 2.4-7.4L2 9.4h7.6z"/></svg>
+          <svg class="star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 16.8l-6.2 4.5 2.4-7.4L2 9.4h7.6z"/></svg>
+          <svg class="star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 16.8l-6.2 4.5 2.4-7.4L2 9.4h7.6z"/></svg>
+        </div>
+        <p class="testimonial-text">"Gracias a TalentBridge logré adaptar mi CV al mercado español. A las dos semanas ya tenía tres entrevistas. La asesoría humana marcó la diferencia."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">MR</div>
+          <div class="author-info">
+            <h4>María Rodríguez</h4>
+            <span>Ingeniera de Software · Venezuela → España</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="testimonial-card">
+        <svg class="quote-icon" width="48" height="48" viewBox="0 0 24 24" fill="currentColor"><path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/></svg>
+        <div class="stars" aria-label="5 estrellas">
+          <svg class="star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 16.8l-6.2 4.5 2.4-7.4L2 9.4h7.6z"/></svg>
+          <svg class="star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 16.8l-6.2 4.5 2.4-7.4L2 9.4h7.6z"/></svg>
+          <svg class="star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 16.8l-6.2 4.5 2.4-7.4L2 9.4h7.6z"/></svg>
+          <svg class="star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 16.8l-6.2 4.5 2.4-7.4L2 9.4h7.6z"/></svg>
+          <svg class="star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 16.8l-6.2 4.5 2.4-7.4L2 9.4h7.6z"/></svg>
+        </div>
+        <p class="testimonial-text">"El Plan Pro transformó mi LinkedIn. Los reclutadores ahora me contactan directamente. La inversión se pagó sola en la primera oportunidad."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">CP</div>
+          <div class="author-info">
+            <h4>Carlos Pérez</h4>
+            <span>Analista Financiero · Colombia → Remoto</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="testimonial-card">
+        <svg class="quote-icon" width="48" height="48" viewBox="0 0 24 24" fill="currentColor"><path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/></svg>
+        <div class="stars" aria-label="5 estrellas">
+          <svg class="star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 16.8l-6.2 4.5 2.4-7.4L2 9.4h7.6z"/></svg>
+          <svg class="star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 16.8l-6.2 4.5 2.4-7.4L2 9.4h7.6z"/></svg>
+          <svg class="star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 16.8l-6.2 4.5 2.4-7.4L2 9.4h7.6z"/></svg>
+          <svg class="star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 16.8l-6.2 4.5 2.4-7.4L2 9.4h7.6z"/></svg>
+          <svg class="star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 16.8l-6.2 4.5 2.4-7.4L2 9.4h7.6z"/></svg>
+        </div>
+        <p class="testimonial-text">"La Cover Letter que me redactaron fue clave. Pasé de ser ignorada por los ATS a recibir llamadas. Servicio profesional y cercano."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">LG</div>
+          <div class="author-info">
+            <h4>Laura González</h4>
+            <span>Marketing Digital · México → Canadá</span>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<section class="contact" id="contacto">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag" style="color:var(--accent)">Contacto</span>
+      <h2 class="section-title">Hablemos de tu próximo paso</h2>
+      <p class="section-subtitle">Estamos listos para ayudarte a construir tu candidatura internacional.</p>
+    </div>
+    <div class="contact-grid">
+      <a href="mailto:contacto@talentbridge.com" class="contact-card">
+        <div class="contact-icon">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        </div>
+        <h3>Correo electrónico</h3>
+        <p>contacto@talentbridge.com</p>
+      </a>
+      <a href="tel:+584220451602" class="contact-card">
+        <div class="contact-icon">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        </div>
+        <h3>Teléfono</h3>
+        <p>+58 422-0451602</p>
+      </a>
+      <a href="https://wa.me/584220451602?text=Hola%2C%20me%20interesa%20la%20consultor%C3%ADa%20de%20TalentBridge" class="contact-card" target="_blank" rel="noopener">
+        <div class="contact-icon">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        </div>
+        <h3>WhatsApp</h3>
+        <p>+58 422-0451602</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <p>© 2026 TalentBridge · Consultoría de Posicionamiento Profesional · Todos los derechos reservados</p>
+  </div>
+</footer>
+
+<!-- WHATSAPP FLOTANTE -->
+<a href="https://wa.me/584220451602?text=Hola%2C%20me%20interesa%20la%20consultor%C3%ADa%20de%20TalentBridge" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">
+  <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<script>
+  const menuToggle = document.getElementById('menuToggle');
+  const navLinks = document.getElementById('navLinks');
+  const navOverlay = document.getElementById('navOverlay');
+  const body = document.body;
+  const allNavAnchors = navLinks.querySelectorAll('a');
+
+  function openMenu() {
+    menuToggle.classList.add('active');
+    navLinks.classList.add('active');
+    navOverlay.classList.add('active');
+    body.classList.add('menu-open');
+    menuToggle.setAttribute('aria-expanded', 'true');
+    menuToggle.setAttribute('aria-label', 'Cerrar menú');
+  }
+
+  function closeMenu() {
+    menuToggle.classList.remove('active');
+    navLinks.classList.remove('active');
+    navOverlay.classList.remove('active');
+    body.classList.remove('menu-open');
+    menuToggle.setAttribute('aria-expanded', 'false');
+    menuToggle.setAttribute('aria-label', 'Abrir menú');
+  }
+
+  function toggleMenu() {
+    if (navLinks.classList.contains('active')) {
+      closeMenu();
+    } else {
+      openMenu();
+    }
+  }
+
+  menuToggle.addEventListener('click', toggleMenu);
+  navOverlay.addEventListener('click', closeMenu);
+
+  allNavAnchors.forEach(anchor => {
+    anchor.addEventListener('click', () => {
+      if (window.innerWidth <= 768) {
+        closeMenu();
+      }
+    });
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && navLinks.classList.contains('active')) {
+      closeMenu();
+      menuToggle.focus();
+    }
+  });
+
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 768 && navLinks.classList.contains('active')) {
+      closeMenu();
+    }
+  });
+
+  const header = document.querySelector('header');
+  window.addEventListener('scroll', () => {
+    const currentScroll = window.pageYOffset;
+    header.style.boxShadow = currentScroll > 20 ? '0 4px 20px rgba(10,37,64,.08)' : 'none';
+  }, { passive: true });
+</script>
+</body>
+</html>
